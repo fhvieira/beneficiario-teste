@@ -1,11 +1,6 @@
 package com.example.beneficiariotest.dto;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class ConsultaOutputDTO {
 

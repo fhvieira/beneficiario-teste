@@ -3,7 +3,6 @@ package com.example.beneficiariotest.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class BeneficiarioOutputDTO {
     private String cpf;

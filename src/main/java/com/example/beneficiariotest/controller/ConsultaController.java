@@ -2,10 +2,7 @@ package com.example.beneficiariotest.controller;
 
 import com.example.beneficiariotest.dto.ConsultaInputDTO;
 import com.example.beneficiariotest.dto.ConsultaOutputDTO;
-import com.example.beneficiariotest.dto.EspecialidadeOutputDTO;
 import com.example.beneficiariotest.model.Consulta;
-import com.example.beneficiariotest.model.Especialidade;
-import com.example.beneficiariotest.service.BeneficiarioService;
 import com.example.beneficiariotest.service.ConsultaService;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;

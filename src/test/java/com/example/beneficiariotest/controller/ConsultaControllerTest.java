@@ -1,6 +1,5 @@
 package com.example.beneficiariotest.controller;
 
-import com.example.beneficiariotest.dto.BeneficiarioOutputDTO;
 import com.example.beneficiariotest.dto.ConsultaInputDTO;
 import com.example.beneficiariotest.dto.ConsultaOutputDTO;
 import com.example.beneficiariotest.model.Consulta;
@@ -14,11 +13,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

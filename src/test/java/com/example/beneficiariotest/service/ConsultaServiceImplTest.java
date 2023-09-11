@@ -1,6 +1,5 @@
 package com.example.beneficiariotest.service;
 
-import com.example.beneficiariotest.model.Beneficiario;
 import com.example.beneficiariotest.model.Consulta;
 import com.example.beneficiariotest.repository.ConsultaRepository;
 import org.junit.jupiter.api.Test;
@@ -11,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
