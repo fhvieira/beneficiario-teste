@@ -1,0 +1,6 @@
+projectKey=Beneficiario-Teste
+serverUrl=http://localhost:9000
+serverVersion=10.2.0.77647
+dashboardUrl=http://localhost:9000/dashboard?id=Beneficiario-Teste
+ceTaskId=AYqF7UCtpNty4NrVuATZ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYqF7UCtpNty4NrVuATZ

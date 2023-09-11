@@ -7,7 +7,7 @@ beneficiario-test,com.example.beneficiariotest.exception,CustomNotFoundException
 beneficiario-test,com.example.beneficiariotest.controller,EspecialidadeController,0,35,0,0,0,9,0,3,0,3
 beneficiario-test,com.example.beneficiariotest.controller,BeneficiarioController,0,72,0,0,0,17,0,6,0,6
 beneficiario-test,com.example.beneficiariotest.controller,ConsultaController,0,50,0,0,0,13,0,5,0,5
-beneficiario-test,com.example.beneficiariotest,BeneficiarioTestApplication,8,0,0,0,3,0,2,0,2,0
+beneficiario-test,com.example.beneficiariotest,BeneficiarioTestApplication,0,8,0,0,0,3,0,2,0,2
 beneficiario-test,com.example.beneficiariotest.service,BeneficiarioServiceImpl,0,62,0,0,0,13,0,7,0,7
 beneficiario-test,com.example.beneficiariotest.service,ConsultaServiceImpl,29,23,0,0,6,9,1,3,1,3
 beneficiario-test,com.example.beneficiariotest.service,EspecialidadeServiceImpl,15,10,0,0,2,4,3,2,3,2
