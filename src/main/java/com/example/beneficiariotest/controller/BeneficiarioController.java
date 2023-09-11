@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/beneficiarios")
@@ -30,7 +29,7 @@ public class BeneficiarioController {
 
         List<BeneficiarioOutputDTO> dtoList = beneficiarios.stream()
                         .map(beneficiario -> modelMapper.map(beneficiario, BeneficiarioOutputDTO.class))
-                        .collect(Collectors.toList());
+                        .toList();
 
         return new ResponseEntity<>(dtoList, HttpStatus.OK);
     }

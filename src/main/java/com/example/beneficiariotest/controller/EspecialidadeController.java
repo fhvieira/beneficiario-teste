@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/especialidades")
@@ -30,7 +29,7 @@ public class EspecialidadeController {
 
         List<EspecialidadeOutputDTO> outpub = especialidades.stream()
                         .map(especialidade -> modelMapper.map(especialidade, EspecialidadeOutputDTO.class))
-                        .collect(Collectors.toList());
+                        .toList();
 
         return new ResponseEntity<>(outpub, HttpStatus.OK);
     }

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class ApiExceptionHandler {
@@ -34,7 +33,7 @@ public class ApiExceptionHandler {
                 .getFieldErrors()
                 .stream()
                 .map(FieldError::getDefaultMessage)
-                .collect(Collectors.toList());
+                .toList();
 
         ErrorResponse errorResponse = new ErrorResponse("Validation failed", errors);
         return ResponseEntity.badRequest().body(errorResponse);
