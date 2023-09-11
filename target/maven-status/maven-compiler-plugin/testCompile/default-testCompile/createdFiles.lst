@@ -1,0 +1,7 @@
+com/example/beneficiariotest/controller/ConsultaControllerTest.class
+com/example/beneficiariotest/service/ConsultaServiceImplTest.class
+com/example/beneficiariotest/controller/BeneficiarioControllerTest.class
+com/example/beneficiariotest/service/EspecialidadeServiceImplTest.class
+com/example/beneficiariotest/BeneficiarioTestApplicationTests.class
+com/example/beneficiariotest/controller/EspecialidadeControllerTest.class
+com/example/beneficiariotest/service/BeneficiarioServiceImplTest.class

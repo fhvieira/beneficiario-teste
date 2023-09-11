@@ -1,0 +1,50 @@
+--
+# Exclui os beneficiarios e consultas
+POST /reset
+200 OK
+
+--
+# Consulta um beneficiario nao cadastrato
+GET /beneficiarios/33725833649
+404 Beneficiario nao cadastrado
+
+--
+# Cadastra um beneficiario
+POST /beneficiarios {"cpf":"33725833649", "nome":"José da Silva", "dataNascimento":"1975-05-18"}
+201 OK
+
+--
+# Consulta um beneficiario existente
+GET /beneficiarios/33725833649
+200 {"cpf":"33725833649", "nome":"José da Silva", "dataNascimento":"1975-05-18"}
+
+--
+# Cadastra uma consulta
+POST /consultas {"beneficiario":"33725833649", "especialidade":"Clínica Geral", "dataHora":"2023-12-15 14:00:00"}
+201 OK
+
+--
+# Tenta cadastrar a consulta novamente para  a mesma data
+POST /consultas {"beneficiario":"33725833649", "especialidade":"Clínica Geral", "dataHora":"2023-12-15 14:00:00"}
+409 Conflito de Agendas. Foi encontrado outro agendamento para o mesmo dia e horario.
+
+--
+# Cadastrar outra consulta
+POST /consultas {"beneficiario":"33725833649", "especialidade":"Urologista", "dataHora":"2023-12-16 14:00:00"}
+201 OK
+
+--
+# Lista as consultas do beneficiário
+GET /consultas?beneficiario=33725833649
+200 {"beneficiario": "33725833649", "consultas": [{"id":1, "especialidade":"Clínica Geral", "dataHora":"2023-12-15 14:00:00"},{"id":2, "especialidade":"Urologista", "dataHora":"2023-12-16 14:00:00"}]}
+
+
+--
+# Exclui uma consulta
+DELETE  /consultas/1
+200 OK
+
+--
+# Exclui os beneficiarios e consultas
+POST /reset
+200 OK
