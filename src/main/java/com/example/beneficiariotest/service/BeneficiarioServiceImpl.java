@@ -27,13 +27,13 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
     }
 
     @Override
-    public void salvar(final Beneficiario beneficiario) {
+    public Beneficiario salvar(final Beneficiario beneficiario) {
         repository.findById(beneficiario.getCpf()).ifPresent(b -> {
             throw new BeneficiarioAlreadyExistsException(String.format("Beneficiário com cpf %s já cadastrado",
                     beneficiario.getCpf()));
         });
 
-        repository.save(beneficiario);
+        return repository.save(beneficiario);
     }
 
     @Override

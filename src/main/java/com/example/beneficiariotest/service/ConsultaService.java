@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ConsultaService {
 
-    void salvar(ConsultaInputDTO consulta);
+    Consulta salvar(ConsultaInputDTO consulta);
 
     void reset();
 

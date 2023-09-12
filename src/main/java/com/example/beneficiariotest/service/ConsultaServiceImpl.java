@@ -1,7 +1,6 @@
 package com.example.beneficiariotest.service;
 
 import com.example.beneficiariotest.dto.ConsultaInputDTO;
-import com.example.beneficiariotest.model.Beneficiario;
 import com.example.beneficiariotest.model.Consulta;
 import com.example.beneficiariotest.model.Especialidade;
 import com.example.beneficiariotest.repository.ConsultaRepository;
@@ -33,15 +32,16 @@ public class ConsultaServiceImpl implements ConsultaService {
         return repository.findAll();
     }
 
-    public void salvar(ConsultaInputDTO consultaInput) {
+    public Consulta salvar(ConsultaInputDTO consultaInput) {
         Consulta consulta = modelMapper.map(consultaInput, Consulta.class);
 
-        Beneficiario beneficiario = beneficiarioService.buscarPorCpfOrThrow(consultaInput.getCpfBeneficiario());
+        beneficiarioService.buscarPorCpfOrThrow(consultaInput.getCpfBeneficiario());
+
         Especialidade especialidade = especialidadeService.buscarPorNomeOrThrow(consultaInput.getNomeEspecialidade());
 
         consulta.setCodigoEspecialidade(especialidade.getId());
 
-        repository.save(consulta);
+        return repository.save(consulta);
     }
 
     @Override

@@ -55,7 +55,7 @@ class BeneficiarioControllerTest {
     }
 
     @Test
-    public void testBuscarBeneficiarioByCpf() {
+    void testBuscarBeneficiarioByCpf() {
         String expectedCpf = "123456789-12";
         String excpectedNome = "John Doe";
         LocalDate expectedDataNascimento = LocalDate.now().minusYears(20);
@@ -83,7 +83,7 @@ class BeneficiarioControllerTest {
     }
 
     @Test
-    public void testAdicionarNovoBeneficiario() {
+    void testAdicionarNovoBeneficiario() {
         BeneficiarioInputDTO beneficiarioInputDTO = new BeneficiarioInputDTO("123456789-12",
                 "John Doe", LocalDate.now().minusYears(20));
 
@@ -93,7 +93,7 @@ class BeneficiarioControllerTest {
     }
 
     @Test
-    public void testReset() {
+    void testReset() {
         ResponseEntity<Void> response = beneficiarioController.reset();
 
         assertEquals(HttpStatus.OK, response.getStatusCode());

@@ -57,7 +57,7 @@ class ConsultaControllerTest {
     }
 
     @Test
-    public void testReset() {
+    void testReset() {
         ResponseEntity<Void> response = consultaController.reset();
 
         assertEquals(HttpStatus.OK, response.getStatusCode());

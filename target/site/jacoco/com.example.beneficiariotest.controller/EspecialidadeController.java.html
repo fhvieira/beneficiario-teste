@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(&quot;/especialidades&quot;)
@@ -19,20 +18,20 @@ public class EspecialidadeController {
     private final EspecialidadeService especialidadeService;
     private final ModelMapper modelMapper;
 
-<span class="fc" id="L22">    public EspecialidadeController(EspecialidadeService especialidadeService, ModelMapper modelMapper) {</span>
-<span class="fc" id="L23">        this.especialidadeService = especialidadeService;</span>
-<span class="fc" id="L24">        this.modelMapper = modelMapper;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L21">    public EspecialidadeController(EspecialidadeService especialidadeService, ModelMapper modelMapper) {</span>
+<span class="fc" id="L22">        this.especialidadeService = especialidadeService;</span>
+<span class="fc" id="L23">        this.modelMapper = modelMapper;</span>
+<span class="fc" id="L24">    }</span>
 
     @GetMapping
     public ResponseEntity&lt;List&lt;EspecialidadeOutputDTO&gt;&gt; listar() {
-<span class="fc" id="L29">        List&lt;Especialidade&gt; especialidades = especialidadeService.listarTodos();</span>
+<span class="fc" id="L28">        List&lt;Especialidade&gt; especialidades = especialidadeService.listarTodos();</span>
 
-<span class="fc" id="L31">        List&lt;EspecialidadeOutputDTO&gt; outpub = especialidades.stream()</span>
-<span class="fc" id="L32">                        .map(especialidade -&gt; modelMapper.map(especialidade, EspecialidadeOutputDTO.class))</span>
-<span class="fc" id="L33">                        .collect(Collectors.toList());</span>
+<span class="fc" id="L30">        List&lt;EspecialidadeOutputDTO&gt; outpub = especialidades.stream()</span>
+<span class="fc" id="L31">                        .map(especialidade -&gt; modelMapper.map(especialidade, EspecialidadeOutputDTO.class))</span>
+<span class="fc" id="L32">                        .toList();</span>
 
-<span class="fc" id="L35">        return new ResponseEntity&lt;&gt;(outpub, HttpStatus.OK);</span>
+<span class="fc" id="L34">        return new ResponseEntity&lt;&gt;(outpub, HttpStatus.OK);</span>
     }
 
 }

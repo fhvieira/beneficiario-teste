@@ -9,7 +9,7 @@ public interface BeneficiarioService {
 
     Beneficiario buscarPorCpfOrThrow(String cpf);
 
-    void salvar(Beneficiario beneficiario);
+    Beneficiario salvar(Beneficiario beneficiario);
 
     void reset();
 }

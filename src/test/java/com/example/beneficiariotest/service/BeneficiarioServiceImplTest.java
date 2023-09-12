@@ -16,8 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class BeneficiarioServiceImplTest {
@@ -60,7 +59,11 @@ class BeneficiarioServiceImplTest {
 
     @Test
     void testReset() {
+        doNothing().when(repository).deleteAll();
+
         service.reset();
+
+        verify(repository, times(1)).deleteAll();
     }
 
     @Test
@@ -76,9 +79,16 @@ class BeneficiarioServiceImplTest {
 
     @Test
     void testSalvar() {
-        Beneficiario beneficiario = mock(Beneficiario.class);
+        Beneficiario beneficiarioToSave = mock(Beneficiario.class);
+        Beneficiario savedBeneficiario = mock(Beneficiario.class);
 
-        service.salvar(beneficiario);
+        when(repository.save(beneficiarioToSave)).thenReturn(savedBeneficiario);
+
+        Beneficiario result = service.salvar(beneficiarioToSave);
+
+        verify(repository, times(1)).save(beneficiarioToSave);
+
+        assertEquals(savedBeneficiario, result);
     }
 
 }
